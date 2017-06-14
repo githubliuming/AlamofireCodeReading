@@ -12,9 +12,9 @@ AFError 内嵌枚举 参数编码发生错误到情况
         case propertyListEncodingFailed(error: Error)
     }
 ```
-* missingURL 无 url
-* jsonEncodingFailed json序列化过程中抛出到错误
-* propertyListEncodingFailed  属性列表序列化过程中出错
+* missingURL  无 url
+* jsonEncodingFailed  json序列化过程中抛出到错误
+* propertyListEncodingFailed   属性列表序列化过程中出错
 
 ```
 扩展内嵌枚举 ParameterEncodingFailureReason 
@@ -68,18 +68,18 @@ AFError 内嵌枚举
         case inputStreamReadFailed(error: Error)
     }
 ```
-* bodyPartURLInvalid 提供到url 不是 文件URL (file Url验证失败)
-* bodyPartFilenameInvalid 提供的文件路径中文件名为空(文件名丢失)
-* bodyPartFileNotReachable 文件路径不存在
-* bodyPartFileNotReachableWithError 文件路径不存在 携带错误信息
-* bodyPartFileIsDirectory 文件路径是一个文件目录
-* bodyPartFileSizeQueryFailedWithError 获取文件大小时出错
-* bodyPartInputStreamCreationFailed 根据文件路径创建InputStream流时出错
-* outputStreamCreationFailed  OutputStream创建失败
-* outputStreamFileAlreadyExists outpuStream 写入文件时，写入文件已经存在
-* outputStreamURLInvalid    outputStream输出路径为非文件路径
-* outputStreamWriteFailed   outpuStream 写入文件失败
-* inputStreamReadFailed     InputStream读取文件失败
+* bodyPartURLInvalid  提供到url 不是 文件URL (file Url验证失败)
+* bodyPartFilenameInvalid  提供的文件路径中文件名为空(文件名丢失)
+* bodyPartFileNotReachable  文件路径不存在
+* bodyPartFileNotReachableWithError  文件路径不存在 携带错误信息
+* bodyPartFileIsDirectory  文件路径是一个文件目录
+* bodyPartFileSizeQueryFailedWithError  获取文件大小时出错
+* bodyPartInputStreamCreationFailed  根据文件路径创建InputStream流时出错
+* outputStreamCreationFailed   OutputStream创建失败
+* outputStreamFileAlreadyExists  outpuStream 写入文件时，写入文件已经存在
+* outputStreamURLInvalid     outputStream输出路径为非文件路径
+* outputStreamWriteFailed    outpuStream 写入文件失败
+* inputStreamReadFailed      InputStream读取文件失败
 
 
 ```
@@ -109,11 +109,11 @@ extension AFError.MultipartEncodingFailureReason {
     }
 }
 ```
-*  url 扩展url属性，并实现get方法。返回各种url错误下错误到url路径
-*  underlyingError  扩展 underlyingError属性 返回 错误的error信息
+*  url  扩展url属性，并实现get方法。返回各种url错误下错误到url路径
+*  underlyingError   扩展 underlyingError属性 返回 错误的error信息
 
 ```
-MultipartEncodingFailureReason 枚举扩展
+MultipartEncodingFailureReason  枚举扩展
 
 extension AFError.MultipartEncodingFailureReason {
     var localizedDescription: String {
@@ -155,7 +155,7 @@ extension AFError.MultipartEncodingFailureReason {
 }
 ```
 
-* localizedDescription 扩展localizedDescription属性并实现get方法 返回MultipartEncodingFailureReason枚举的错误描述信息
+* localizedDescription  扩展localizedDescription属性并实现get方法 返回MultipartEncodingFailureReason枚举的错误描述信息
 
 
 ```
@@ -168,11 +168,11 @@ AFError 内嵌枚举 ResponseValidationFailureReason ---服务器响应错误
         case unacceptableStatusCode(code: Int)
     }
 ```
-* dataFileNil 服务器响应到数据文件不存在
-* dataFileReadFailed 服务器响应的数据文件不能read
-* missingContentType  响应不包含“Content-Type”，提供的“acceptableContentTypes”不包含通配符类型
-* unacceptableContentType response中到`Content-Type`在设置到`acceptableContentTypes`匹配不到
-* unacceptableStatusCode 服务器返回的status code不正确
+* dataFileNil  服务器响应到数据文件不存在
+* dataFileReadFailed  服务器响应的数据文件不能read
+* missingContentType   响应不包含“Content-Type”，提供的“acceptableContentTypes”不包含通配符类型
+* unacceptableContentType  response中到`Content-Type`在设置到`acceptableContentTypes`匹配不到
+* unacceptableStatusCode  服务器返回的status code不正确
 
 ```
 ResponseValidationFailureReason的扩展
@@ -206,9 +206,9 @@ extension AFError.ResponseValidationFailureReason {
 }
 
 ```
-* acceptableContentTypes 扩展到属性，返回错误的acceptableContentTypes列表
-* responseContentType    扩展属性, 返回未匹配的`Content-Type`
-* responseCode           扩展属性  返回服务器错误码
+* acceptableContentTypes  扩展到属性，返回错误的acceptableContentTypes列表
+* responseContentType     扩展属性, 返回未匹配的`Content-Type`
+* responseCode            扩展属性  返回服务器错误码
 
 ```
 extension AFError.ResponseValidationFailureReason {
@@ -234,7 +234,7 @@ extension AFError.ResponseValidationFailureReason {
     }
 }
 ```
-* localizedDescription 扩展属性 返回ResponseValidationFailureReason枚举各项到描述文本
+* localizedDescription  扩展属性 返回ResponseValidationFailureReason枚举各项到描述文本
 
 ```
 AFError内嵌枚举 记录 respose序列化失败原因
@@ -249,13 +249,13 @@ AFError内嵌枚举 记录 respose序列化失败原因
     }
 
 ```
-* inputDataNil  服务器响应无内容
-* inputDataNilOrZeroLength  服务器响应无内容或者长度为0
-* inputFileNil  服务器响文件不存在
-* inputFileReadFailed 服务器响应文件不能read
-* stringSerializationFailed  字符用提供到编码编码失败
-* jsonSerializationFailed  json序列化失败
-* propertyListSerializationFailed  属性列表序列化失败
+* inputDataNil   服务器响应无内容
+* inputDataNilOrZeroLength   服务器响应无内容或者长度为0
+* inputFileNil   服务器响文件不存在
+* inputFileReadFailed  服务器响应文件不能read
+* stringSerializationFailed   字符用提供到编码编码失败
+* jsonSerializationFailed   json序列化失败
+* propertyListSerializationFailed   属性列表序列化失败
 
 
 ```
@@ -280,8 +280,8 @@ extension AFError.ResponseSerializationFailureReason {
     }
 }
 ```
-* failedStringEncoding 扩展属性 返回编码失败的编码
-* underlyingError 扩展属性 json序列化失败到error
+* failedStringEncoding  扩展属性 返回编码失败的编码
+* underlyingError  扩展属性 json序列化失败到error
 
 ```
 extension AFError.ResponseSerializationFailureReason {
@@ -305,7 +305,7 @@ extension AFError.ResponseSerializationFailureReason {
     }
 }
 ```
-* localizedDescription 扩展属性 返回各种错误原因的描述
+* localizedDescription  扩展属性 返回各种错误原因的描述
 
 ```
 内嵌结构体
@@ -320,7 +320,7 @@ extension Error {
     var underlyingAdaptError: Error? { return (self as? AdaptError)?.error }
 }
 ```
-* underlyingAdaptError 扩展属性 返回携带到error信息
+* underlyingAdaptError  扩展属性 返回携带到error信息
 
 2、属性部分
 ----
@@ -334,10 +334,10 @@ extension Error {
 ```
 
 * invalidURL 验证url
-* parameterEncodingFailed  参数编码错误
-* multipartEncodingFailed  multipart编码失败
-* responseValidationFailed 服务器响应验证失败
-* responseSerializationFailed 服务器响应数据序列化失败
+* parameterEncodingFailed   参数编码错误
+* multipartEncodingFailed   multipart编码失败
+* responseValidationFailed  服务器响应验证失败
+* responseSerializationFailed  服务器响应数据序列化失败
 
 3、扩展部分
 ----
@@ -379,11 +379,11 @@ extension AFError {
 }
 
 ```
-* isInvalidURLError  扩展属性 判断当前错误是不是验证url失败
-* isParameterEncodingError 扩展属性 判断是否为参数编码错误
-* isMultipartEncodingError 扩展属性 判断是否为multipart编码错误
-* isResponseValidationError 是否为服务器响应验证错误
-* isResponseSerializationError 是否为服务器返回数据序列化失败
+* isInvalidURLError   扩展属性 判断当前错误是不是验证url失败
+* isParameterEncodingError  扩展属性 判断是否为参数编码错误
+* isMultipartEncodingError  扩展属性 判断是否为multipart编码错误
+* isResponseValidationError  是否为服务器响应验证错误
+* isResponseSerializationError  是否为服务器返回数据序列化失败
 
 ```
 extension AFError {
@@ -463,10 +463,10 @@ extension AFError {
     }
 }
 ```
-* urlConvertible 判断是否为invalidURL类型，是的话返回 url 否则返回nil
-* underlyingError 返回错误信息
-* responseCode 返回服务器error code
-* failedStringEncoding 返回字符串编码失败时使用到编码
+* urlConvertible  判断是否为invalidURL类型，是的话返回 url 否则返回nil
+* underlyingError  返回错误信息
+* responseCode  返回服务器error code
+* failedStringEncoding  返回字符串编码失败时使用到编码
 
 
 ```
@@ -488,4 +488,4 @@ extension AFError: LocalizedError {
 }
 ```
 
-* errorDescription 返回错误的描述信息
+* errorDescription  返回错误的描述信息
